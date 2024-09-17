@@ -21,7 +21,9 @@ fs.readFile("./file.txt", "utf8", () => {
     console.log("File Reading CB");
 });
 process.nextTick(() => {
-    process.nextTick(() => console.log(" inner nextTick"));
+    process.nextTick(() => console.log("inner nextTick"));
+    /* Promise.resolve("inner Promise").then(console.log);
+    setTimeout(() => console.log("Timer2 expired"), 0); */
     console.log("nextTick");
 });
 
